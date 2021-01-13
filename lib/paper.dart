@@ -5,7 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
+import 'package:flutter_custom_view/utils/screen_utils.dart';
 
+///绘制path 动画组合
 class Paper extends StatefulWidget {
   @override
   _PaperState createState() => _PaperState();
@@ -17,6 +19,7 @@ class _PaperState extends State<Paper> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+    ScreenUtils.setScreenHorizontal();
     _controller = AnimationController(
       duration: const Duration(seconds: 10),
       vsync: this,
@@ -30,6 +33,7 @@ class _PaperState extends State<Paper> with SingleTickerProviderStateMixin {
   @override
   void dispose() {
     _controller.dispose();
+    ScreenUtils.setScreenVertical();
     super.dispose();
   }
 

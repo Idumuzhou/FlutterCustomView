@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_view/utils/screen_utils.dart';
 
-class Paper extends StatelessWidget {
+///Paint 画笔相关
+class Paper01 extends StatefulWidget {
+  @override
+  _Paper01State createState() => _Paper01State();
+}
+
+class _Paper01State extends State<Paper01> {
+  @override
+  void initState() {
+    super.initState();
+    ScreenUtils.setScreenHorizontal();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    ScreenUtils.setScreenVertical();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,7 +44,6 @@ class PaperPainter extends CustomPainter {
     paint.color = Colors.red;
     canvas.drawCircle(Offset(150, 200), 20, paint);
 
-
     //绘制线
     final Paint paint2 = Paint();
     paint2
@@ -34,14 +52,10 @@ class PaperPainter extends CustomPainter {
       ..style = PaintingStyle.stroke; //模式 线型
     canvas.drawLine(Offset(0, 0), Offset(100, 100), paint2);
 
-
     Path path = Path();
     path.moveTo(100, 100);
     path.lineTo(200, 0);
     canvas.drawPath(path, paint2..color = Colors.blue);
-
-
-
   }
 
   @override

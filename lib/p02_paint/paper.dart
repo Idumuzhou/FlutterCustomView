@@ -1,10 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_custom_view/utils/screen_utils.dart';
 
 /// create by DuMuZhou on
 /// description: 画笔基础属性,线性属性,着色器效果,过滤器效果
 /// date: 2020/11/11 11:40
 
-class Paper extends StatelessWidget {
+class Paper02 extends StatefulWidget {
+
+  @override
+  _Paper02State createState() => _Paper02State();
+}
+
+class _Paper02State extends State<Paper02> {
+  @override
+  void initState() {
+    super.initState();
+    ScreenUtils.setScreenHorizontal();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    ScreenUtils.setScreenVertical();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

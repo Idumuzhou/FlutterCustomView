@@ -11,5 +11,5 @@ void main() {
   //全屏显示
   SystemChrome.setEnabledSystemUIOverlays([]);
 
-  runApp(Paper());
+  runApp(Paper01());
 }
