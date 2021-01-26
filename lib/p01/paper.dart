@@ -42,7 +42,7 @@ class PaperPainter extends CustomPainter {
     canvas.drawCircle(Offset(200, 100), 20, paint);
     //设置画笔颜色
     paint.color = Colors.red;
-    canvas.drawCircle(Offset(150, 200), 20, paint);
+    canvas.drawCircle(Offset(150, 200), 20, paint..isAntiAlias =true..color=Colors.deepPurple);
 
     //绘制线
     final Paint paint2 = Paint();
@@ -60,4 +60,5 @@ class PaperPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+
 }
