@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_view/utils/screen_utils.dart';
+import 'package:flutter_custom_view/widgets/coordinate.dart';
 
 /// create by LXL
 /// description: Canvas 下篇 画布绘制图片字
@@ -38,10 +39,11 @@ class _CanvasPage02State extends State<CanvasPage02> {
 class PaperPainter extends CustomPainter{
   @override
   void paint(Canvas canvas, Size size) {
-
+    canvas.translate(size.width/2, size.height/2);
+    Coordinate.paint(canvas, size);
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 
 }
