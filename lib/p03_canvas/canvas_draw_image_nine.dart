@@ -5,15 +5,15 @@ import 'package:flutter_custom_view/widgets/coordinate.dart';
 import 'dart:ui' as ui;
 
 /// create by LXL
-/// description: Canvas 下篇 画布绘制图片字
+/// description: .9 域绘制
 /// date: 2021/1/26 15:54
 
-class CanvasPage02 extends StatefulWidget {
+class CanvasDrawImageNinePage extends StatefulWidget {
   @override
-  _CanvasPage02State createState() => _CanvasPage02State();
+  _CanvasDrawImageNinePageState createState() => _CanvasDrawImageNinePageState();
 }
 
-class _CanvasPage02State extends State<CanvasPage02> {
+class _CanvasDrawImageNinePageState extends State<CanvasDrawImageNinePage> {
   ui.Image _image;
 
   @override
@@ -24,7 +24,7 @@ class _CanvasPage02State extends State<CanvasPage02> {
   }
 
   void _loadImage() async {
-    _image = await ImageUtils.loadImageFromAssets('assets/images/wy_300x200.jpg');
+    _image = await ImageUtils.loadImageFromAssets('assets/images/right_chat.png');
     setState(() {});
   }
 
@@ -64,56 +64,35 @@ class PaperPainter extends CustomPainter {
     canvas.translate(size.width / 2, size.height / 2);
     Coordinate.paint(canvas, size);
 
-    //图片绘制
-    _drawImage(canvas);
-
-    //图片域绘制
-    _drawImageRect(canvas);
-
     //.9 域绘制
     _drawImageNine(canvas);
   }
 
-  ///图片的绘制:drawImage
-  void _drawImage(Canvas canvas) {
-    if (image != null) {
-      canvas.drawImage(image, Offset(-image.width / 2, -image.height / 2), _paint);
-    }
-  }
-
-  ///图片域绘制:drawImageRect
-  void _drawImageRect(Canvas canvas) {
-    // src 表示从资源图片 image 上抠出一块矩形域，所以原点是图片的左上角。
-    // dst 表示将抠出的图片填充到画布的哪个矩形域中，所以原点是画布原点。
-    if (image != null) {
-      canvas.drawImageRect(
-          image,
-          Rect.fromCenter(center: Offset(image.width / 2, image.height / 2), width: 60, height: 60),
-          Rect.fromLTRB(0, 0, 100, 100).translate(200, 0),
-          _paint);
-
-      canvas.drawImageRect(
-          image,
-          Rect.fromCenter(
-              center: Offset(image.width/2, image.height/2-60), width: 60, height: 60),
-          Rect.fromLTRB(0, 0, 100, 100).translate(-280, -100),
-          _paint);
-
-      canvas.drawImageRect(
-          image,
-          Rect.fromCenter(
-              center: Offset(image.width/2+60, image.height/2), width: 60, height: 60),
-          Rect.fromLTRB(0, 0, 100, 100).translate(-280, 50),
-          _paint);
-    }
-  }
-
   ///图片 .9 域绘制:drawImageNine
-  void _drawImageNine(Canvas canvas){
+  void _drawImageNine(Canvas canvas) {
+    //center 表示从资源图片image上一块可缩放的矩形域，所以原点是图片的左上角。
+    // dst 表示将抠出的图片填充到画布的哪个矩形域中，所以原点是画布原点。
+    // 这样很容易画出气泡的效果，即指定区域进行缩放，其余不动。
+    if (image != null) {
+      canvas.drawImageNine(
+          image, Rect.fromCenter(center: Offset(image.width / 2, image.height - 6.0), width:image.width-20.0,height: 2.0),
+          Rect.fromCenter(center: Offset(0, 0,), width:300, height: 120), _paint);
 
+      canvas.drawImageNine(
+          image,
+          Rect.fromCenter(center: Offset(image.width/2, image.height-6.0),
+              width: image.width-20.0, height: 2.0),
+          Rect.fromCenter(center: Offset(0, 0,), width:100, height: 50).translate(250, 0),
+          _paint);
+
+      canvas.drawImageNine(
+          image,
+          Rect.fromCenter(center: Offset(image.width/2, image.height-6.0),
+              width: image.width-20.0, height: 2.0),
+          Rect.fromCenter(center: Offset(0, 0,), width:80, height: 250).translate(-250, 0),
+          _paint);
+    }
   }
-
-
 
   @override
   bool shouldRepaint(PaperPainter oldDelegate) => image != oldDelegate.image;

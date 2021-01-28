@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_custom_view/p01/paper.dart';
 import 'package:flutter_custom_view/p02_paint/paper.dart';
+import 'package:flutter_custom_view/p03_canvas/canvas_draw_atlas.dart';
+import 'package:flutter_custom_view/p03_canvas/canvas_draw_image_nine.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_page_01.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_page_02.dart';
 import 'package:flutter_custom_view/routes/navigator_route.dart';
@@ -23,8 +25,24 @@ void main() {
 }
 
 class MyHomePage extends StatelessWidget {
-  final _pageTitle = ['Paper00', 'Paint 画笔相关', '画笔基础属性,线性属性,着色器效果,过滤器效果', 'Canvas 上篇', 'Canvas 下篇'];
-  final _pageList = [Paper(), Paper01(), Paper02(), CanvasPage01(), CanvasPage02()];
+  final _pageTitle = [
+    'Paper00',
+    'Paint 画笔相关',
+    '画笔基础属性,线性属性,着色器效果,过滤器效果',
+    'Canvas 上篇',
+    'Canvas 下篇',
+    '.9 图片域绘制',
+    '绘制图集'
+  ];
+  final _pageList = [
+    Paper(),
+    Paper01(),
+    Paper02(),
+    CanvasPage01(),
+    CanvasPage02(),
+    CanvasDrawImageNinePage(),
+    CanvasDrawAtlasPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {

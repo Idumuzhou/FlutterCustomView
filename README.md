@@ -2,6 +2,9 @@
 
 A new Flutter application.
 
+## 截图
+![Canvas_01](screenshot/canvas_01.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
