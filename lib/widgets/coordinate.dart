@@ -13,16 +13,24 @@ class Coordinate {
   static final double strokeWidth = .5; //线宽
   static final Color color = Colors.grey; //线颜色
 
+  ///通过path绘制网格
+  static Path _gridPath = Path();
+
   // 定义成员变量
   static final TextPainter _textPainter = TextPainter(textDirection: TextDirection.ltr);
 
-  static void paint(Canvas canvas, Size size) {
+  static void paint(Canvas canvas, Size size, {bool isPath = false}) {
     _gridPaint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
-    //绘制右下角网格
-    drawGrid(canvas, size);
+
+    //绘制网格方式 1.通过平移画布,2.通过path绘制
+    if(!isPath) {
+      drawGrid(canvas, size);
+    }else{
+      drawPathGridLine(canvas,size);
+    }
 
     //绘制X轴 Y轴
     drawAxis(canvas, size);
@@ -166,5 +174,27 @@ class Coordinate {
       offset = Offset(size.height / 2, -size.height / 2 + 2);
     }
     _textPainter.paint(canvas, offset);
+  }
+
+  ///通过Path绘制网格
+  static void drawPathGridLine(Canvas canvas, Size size) {
+
+    for (int i = 0; i < size.width / 2 / step; i++) {
+      _gridPath.moveTo(step * i, -size.height / 2);
+      _gridPath.relativeLineTo(0, size.height);
+      _gridPath.moveTo(-step * i, -size.height / 2);
+      _gridPath.relativeLineTo(0, size.height);
+    }
+
+    for (int i = 0; i < size.height / 2 / step; i++) {
+      _gridPath.moveTo(-size.width / 2, step * i);
+      _gridPath.relativeLineTo(size.width, 0);
+      _gridPath.moveTo(
+        -size.width / 2,
+        -step * i,
+      );
+      _gridPath.relativeLineTo(size.width, 0);
+    }
+    canvas.drawPath(_gridPath, _gridPaint);
   }
 }

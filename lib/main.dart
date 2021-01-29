@@ -6,10 +6,13 @@ import 'package:flutter_custom_view/p01/paper.dart';
 import 'package:flutter_custom_view/p02_paint/paper.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_draw_atlas.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_draw_image_nine.dart';
+import 'package:flutter_custom_view/p03_canvas/canvas_draw_text.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_page_01.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_page_02.dart';
+import 'package:flutter_custom_view/p04_path/path_page_01.dart';
 import 'package:flutter_custom_view/routes/navigator_route.dart';
 
+import 'p04_path/path_page_02.dart';
 import 'paper.dart';
 
 void main() {
@@ -32,7 +35,10 @@ class MyHomePage extends StatelessWidget {
     'Canvas 上篇',
     'Canvas 下篇',
     '.9 图片域绘制',
-    '绘制图集'
+    '绘制图集',
+    '绘制文字',
+    'Path 上篇',
+    'Path 下篇',
   ];
   final _pageList = [
     Paper(),
@@ -42,6 +48,9 @@ class MyHomePage extends StatelessWidget {
     CanvasPage02(),
     CanvasDrawImageNinePage(),
     CanvasDrawAtlasPage(),
+    CanvasDrawTextPage(),
+    PathPage01(),
+    PathPage02(),
   ];
 
   @override

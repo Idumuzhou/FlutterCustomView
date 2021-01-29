@@ -3,7 +3,14 @@
 A new Flutter application.
 
 ## 截图
+Canvas
 ![Canvas_01](screenshot/canvas_01.png)
+绘制文字
+![Draw_text](screenshot/draw_text.png)
+Path
+![Path_01](screenshot/path_01.png)
+![Path_02](screenshot/path_02.png)
+
 
 ## Getting Started
 
