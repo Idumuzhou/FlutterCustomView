@@ -1,26 +1,22 @@
 # flutter_custom_view
 
-A new Flutter application.
+Flutter 自定义View
 
 ## 截图
-Canvas
+### Canvas
 ![Canvas_01](screenshot/canvas_01.png)
-绘制文字
+### 绘制文字
 ![Draw_text](screenshot/draw_text.png)
-Path
+### Path
+Path绘制
+[1]. 路径的 [封闭] [重置] [偏移] 操作。
+[2]. 路径的 [矩形边距] 和 [检测点是否在路径中]。
+[3]. 路径的 [路径变换] 和 [路径联合]。
+[4]. 路径测量的用法和作用。
 ![Path_01](screenshot/path_01.png)
+[1]. 如何通过移动路径形成形状：直线移动、圆弧移动、圆锥曲线移动、贝塞尔曲线移动。
+[2]. 路径的 [绝对移动] 和 [相对移动]。
+[3]. 在已有的路径中添加其他形状：添加矩形、圆角矩形、椭圆、圆弧、多边形、其他路径。
+[4]. 使用 path 绘制坐标系。
 ![Path_02](screenshot/path_02.png)
 
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
