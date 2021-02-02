@@ -1,7 +1,4 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_custom_view/p01/paper.dart';
 import 'package:flutter_custom_view/p02_paint/paper.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_draw_atlas.dart';
@@ -10,9 +7,14 @@ import 'package:flutter_custom_view/p03_canvas/canvas_draw_text.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_page_01.dart';
 import 'package:flutter_custom_view/p03_canvas/canvas_page_02.dart';
 import 'package:flutter_custom_view/p04_path/path_page_01.dart';
+import 'package:flutter_custom_view/p05_color/color_blend_mode_page.dart';
+import 'package:flutter_custom_view/p05_color/color_page_01.dart';
+import 'package:flutter_custom_view/p05_color/color_page_02.dart';
+import 'package:flutter_custom_view/p05_color/image_filter_page.dart';
 import 'package:flutter_custom_view/routes/navigator_route.dart';
 
 import 'p04_path/path_page_02.dart';
+import 'p05_color/get_image_color_page_02.dart';
 import 'paper.dart';
 
 void main() {
@@ -39,6 +41,11 @@ class MyHomePage extends StatelessWidget {
     '绘制文字',
     'Path 上篇',
     'Path 下篇',
+    'Color 上篇',
+    'Color 下篇',
+    'Color 混合模式',
+    '获取图片中的颜色',
+    '图片着色器',
   ];
   final _pageList = [
     Paper(),
@@ -51,6 +58,11 @@ class MyHomePage extends StatelessWidget {
     CanvasDrawTextPage(),
     PathPage01(),
     PathPage02(),
+    ColorPage01(),
+    ColorPage02(),
+    ColorBlendModePage(),
+    GetImageColorPage(),
+    ImageFilterPage(),
   ];
 
   @override

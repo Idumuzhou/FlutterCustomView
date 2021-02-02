@@ -5,8 +5,10 @@ Flutter 自定义View
 ## 截图
 ### Canvas
 ![Canvas_01](screenshot/canvas_01.png)
+
 ### 绘制文字
 ![Draw_text](screenshot/draw_text.png)
+
 ### Path
 Path绘制<Br/>
 [1]. 路径的 [封闭] [重置] [偏移] 操作。<Br/>
@@ -20,3 +22,15 @@ Path绘制<Br/>
 [4]. 使用 path 绘制坐标系。<Br/>
 ![Path_02](screenshot/path_02.png)
 
+### Color
+[1].  Dart 中的颜色表示方式。<Br/>
+![Color_01](screenshot/color_01.png)<Br/>
+[2]. 颜色 [混合模式] 的效果。<Br/>
+![Color_02](screenshot/color_02.png)<Br/>
+[3]. 了解如何读取图片中的像素颜色。<Br/>
+![Color_03](screenshot/color_03.png)<Br/>
+
+[4]. 使用画笔着色器实现渐变效果：线性渐变、径向渐变、扫描渐变<Br/>
+[5]. 画笔 [图片着色器] 的使用。<Br/>
+[6]. 画笔 [颜色滤色器]、[遮罩滤镜] 的使用。<Br/>
+![Color_04](screenshot/color_04.png)<Br/>

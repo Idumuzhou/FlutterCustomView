@@ -19,23 +19,25 @@ class Coordinate {
   // 定义成员变量
   static final TextPainter _textPainter = TextPainter(textDirection: TextDirection.ltr);
 
-  static void paint(Canvas canvas, Size size, {bool isPath = false}) {
+  static void paint(Canvas canvas, Size size, {bool isPath = false, bool isShowText = true}) {
     _gridPaint = Paint()
       ..color = color
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
 
     //绘制网格方式 1.通过平移画布,2.通过path绘制
-    if(!isPath) {
+    if (!isPath) {
       drawGrid(canvas, size);
-    }else{
-      drawPathGridLine(canvas,size);
+    } else {
+      drawPathGridLine(canvas, size);
     }
 
     //绘制X轴 Y轴
     drawAxis(canvas, size);
     //绘制刻度值
-    drawAxisScale(canvas, size);
+    if (isShowText) {
+      drawAxisScale(canvas, size);
+    }
   }
 
   ///2.1 绘制右下角网格
@@ -178,7 +180,6 @@ class Coordinate {
 
   ///通过Path绘制网格
   static void drawPathGridLine(Canvas canvas, Size size) {
-
     for (int i = 0; i < size.width / 2 / step; i++) {
       _gridPath.moveTo(step * i, -size.height / 2);
       _gridPath.relativeLineTo(0, size.height);

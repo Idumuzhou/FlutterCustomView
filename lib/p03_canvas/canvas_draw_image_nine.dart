@@ -24,7 +24,7 @@ class _CanvasDrawImageNinePageState extends State<CanvasDrawImageNinePage> {
   }
 
   void _loadImage() async {
-    _image = await ImageUtils.loadImageFromAssets('assets/images/right_chat.png');
+    _image = await ImageUtils.loadUiImageFromAssets('assets/images/right_chat.png');
     setState(() {});
   }
 

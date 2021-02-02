@@ -26,7 +26,7 @@ class _CanvasDrawAtlasPageState extends State<CanvasDrawAtlasPage> {
   }
 
   void _loadImage() async {
-    _image = await ImageUtils.loadImageFromAssets('assets/images/shoot.png');
+    _image = await ImageUtils.loadUiImageFromAssets('assets/images/shoot.png');
     setState(() {});
   }
 

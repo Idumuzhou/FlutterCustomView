@@ -24,7 +24,7 @@ class _CanvasPage02State extends State<CanvasPage02> {
   }
 
   void _loadImage() async {
-    _image = await ImageUtils.loadImageFromAssets('assets/images/wy_300x200.jpg');
+    _image = await ImageUtils.loadUiImageFromAssets('assets/images/wy_300x200.jpg');
     setState(() {});
   }
 
