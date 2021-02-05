@@ -11,6 +11,10 @@ import 'package:flutter_custom_view/p05_color/color_blend_mode_page.dart';
 import 'package:flutter_custom_view/p05_color/color_page_01.dart';
 import 'package:flutter_custom_view/p05_color/color_page_02.dart';
 import 'package:flutter_custom_view/p05_color/image_filter_page.dart';
+import 'package:flutter_custom_view/p06_custom_painter/custom_painter_page.dart';
+import 'package:flutter_custom_view/p07_animation/animation_page_01.dart';
+import 'package:flutter_custom_view/p07_animation/animation_page_02.dart';
+import 'package:flutter_custom_view/p08_gesture_detector/handle_widget.dart';
 import 'package:flutter_custom_view/routes/navigator_route.dart';
 
 import 'p04_path/path_page_02.dart';
@@ -45,7 +49,11 @@ class MyHomePage extends StatelessWidget {
     'Color 下篇',
     'Color 混合模式',
     '获取图片中的颜色',
-    '图片着色器',
+    '图片着色器和过滤器',
+    'CustomPainter',
+    '绘制中使用动画',
+    '动画器曲线和方法',
+    'GestureDetector 手势'
   ];
   final _pageList = [
     Paper(),
@@ -63,6 +71,10 @@ class MyHomePage extends StatelessWidget {
     ColorBlendModePage(),
     GetImageColorPage(),
     ImageFilterPage(),
+    CustomPainterPage(),
+    AnimationPage01(),
+    AnimationPage02(),
+    HandleWidget(),
   ];
 
   @override
